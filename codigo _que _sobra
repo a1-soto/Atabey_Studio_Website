@@ -1,0 +1,16 @@
+  <!-- question section -->
+       <section aria-labelledby="contact-heading">
+            <div class="container d-none d-lg-block">
+                <h2>Contact</h2>
+            </div>
+          <!--   <div class="container col-lg-8">
+                <form class="contact-form-container">
+                    <label for="question-input" class="visually-hidden"></label>
+                    <textarea id="question-input" class="textarea_box" placeholder="Enter your question" rows="6"
+                        aria-describedby="question-help"></textarea>
+                    <button type="submit" class="button" aria-label="Send message">
+                        Send
+                    </button>
+                </form>
+            </div> -->
+        </section> 
