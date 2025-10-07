@@ -14,3 +14,263 @@
                 </form>
             </div> -->
         </section> 
+
+        ///////
+        ESTO ES PARA PONER LOS DOTS EN SERVICIOS
+        /* Dots de navegación para la sección de servicios */
+.scroll-dots-services {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    gap: 5px;
+}
+
+.scroll-dots-services .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: gray;
+    border: none;
+    cursor: pointer;
+}
+
+.scroll-dots-services .dot[aria-selected="true"] {
+    background-color: #8fbc8f;
+}
+
+Nota: Puedes agregar un contenedor <div class="scroll-dots-services"></div> debajo del .scroll_container en tu HTML:
+
+function initHorizontalScroll(scrollSelector, cardSelector, dotsSelector) {
+    const scrollContainer = document.querySelector(scrollSelector);
+    const dotsContainer = document.querySelector(dotsSelector);
+
+    if (!scrollContainer || !dotsContainer) return;
+
+    const cards = Array.from(scrollContainer.querySelectorAll(cardSelector));
+    let index = 0;
+    let cardsPerView = 1;
+
+    // --- Ajusta ancho de cards según breakpoints ---
+    function adjustCardWidth() {
+        const containerWidth = scrollContainer.offsetWidth;
+        cardsPerView = containerWidth < 600 ? 1 :
+                       containerWidth < 900 ? 2 : 3;
+        const newWidth = (containerWidth - (cardsPerView - 1) * 20) / cardsPerView;
+        cards.forEach(card => card.style.width = `${newWidth}px`);
+    }
+
+    // --- Crea dots ---
+    function createDots() {
+        dotsContainer.innerHTML = '';
+        const totalDots = Math.ceil(cards.length / cardsPerView);
+        for (let i = 0; i < totalDots; i++) {
+            const btn = document.createElement('button');
+            btn.classList.add('dot');
+            btn.setAttribute('aria-label', `Slide ${i + 1}`);
+            btn.setAttribute('aria-selected', i === 0 ? 'true' : 'false');
+            btn.addEventListener('click', () => scrollToIndex(i));
+            dotsContainer.appendChild(btn);
+        }
+    }
+
+    // --- Actualiza dots ---
+    function updateDots() {
+        const dots = dotsContainer.querySelectorAll('.dot');
+        dots.forEach((dot, i) => dot.setAttribute('aria-selected', i === index ? 'true' : 'false'));
+    }
+
+    // --- Scroll a índice ---
+    function scrollToIndex(i) {
+        const target = i * cardsPerView;
+        const targetCard = cards[target];
+        if (!targetCard) return;
+        scrollContainer.scrollTo({ left: targetCard.offsetLeft, behavior: 'smooth' });
+        index = i;
+        updateDots();
+    }
+
+    // --- Swipe táctil ---
+    let startX = 0;
+    let scrollStart = 0;
+    let isDragging = false;
+
+    scrollContainer.addEventListener('touchstart', e => {
+        startX = e.touches[0].pageX;
+        scrollStart = scrollContainer.scrollLeft;
+        isDragging = true;
+    });
+
+    scrollContainer.addEventListener('touchmove', e => {
+        if (!isDragging) return;
+        const x = e.touches[0].pageX;
+        const walk = startX - x;
+        scrollContainer.scrollLeft = scrollStart + walk;
+    });
+
+    scrollContainer.addEventListener('touchend', () => {
+        isDragging = false;
+        const containerCenter = scrollContainer.scrollLeft + scrollContainer.offsetWidth / 2;
+        let closestIndex = 0;
+        let closestDistance = Infinity;
+        cards.forEach((card, i) => {
+            const cardCenter = card.offsetLeft + card.offsetWidth / 2;
+            const distance = Math.abs(cardCenter - containerCenter);
+            if (distance < closestDistance) {
+                closestDistance = distance;
+                closestIndex = i;
+            }
+        });
+        index = Math.floor(closestIndex / cardsPerView);
+        scrollToIndex(index);
+    });
+
+    // --- Flechas en desktop ---
+    scrollContainer.addEventListener('keydown', e => {
+        if (e.key === 'ArrowRight' && index < Math.ceil(cards.length / cardsPerView) - 1) scrollToIndex(index + 1);
+        if (e.key === 'ArrowLeft' && index > 0) scrollToIndex(index - 1);
+    });
+
+    // --- Inicialización ---
+    adjustCardWidth();
+    createDots();
+    updateDots();
+
+    window.addEventListener('resize', () => {
+        adjustCardWidth();
+        createDots();
+        updateDots();
+    });
+}
+
+// --- Inicializa la sección de servicios ---
+initHorizontalScroll('.scroll', '.card', '.scroll-dots-services');
+
+
+
+
+VERSION UNIFICADA PARA TODOS LOS SCROLL:
+js
+document.addEventListener("DOMContentLoaded", () => {
+    // --- Inicializa todos los scroll containers con dots ---
+    const scrollSections = document.querySelectorAll('.scroll_container');
+
+    scrollSections.forEach(section => {
+        const scrollContainer = section.querySelector('.scroll, .scroll_reviews');
+        const dotsContainer = section.querySelector('.scroll-dots');
+
+        if (!scrollContainer || !dotsContainer) return;
+
+        const cards = Array.from(scrollContainer.querySelectorAll('.card, .card_reviews'));
+        let index = 0;
+        let cardsPerView = 1;
+
+        // --- Ajuste dinámico del ancho de las cards ---
+        function adjustCardWidth() {
+            const containerWidth = scrollContainer.offsetWidth;
+            cardsPerView = containerWidth < 600 ? 1 :
+                           containerWidth < 900 ? 2 : 3; // ajusta según breakpoints
+            const newWidth = (containerWidth - (cardsPerView - 1) * 20) / cardsPerView;
+            cards.forEach(card => card.style.width = `${newWidth}px`);
+        }
+
+        // --- Crea los dots ---
+        function createDots() {
+            dotsContainer.innerHTML = '';
+            const totalDots = Math.ceil(cards.length / cardsPerView);
+            for (let i = 0; i < totalDots; i++) {
+                const btn = document.createElement('button');
+                btn.classList.add('dot');
+                btn.setAttribute('aria-label', `Slide ${i + 1}`);
+                btn.setAttribute('aria-selected', i === 0 ? 'true' : 'false');
+                btn.addEventListener('click', () => scrollToIndex(i));
+                dotsContainer.appendChild(btn);
+            }
+        }
+
+        // --- Actualiza el estado de los dots ---
+        function updateDots() {
+            const dots = dotsContainer.querySelectorAll('.dot');
+            dots.forEach((dot, i) => dot.setAttribute('aria-selected', i === index ? 'true' : 'false'));
+        }
+
+        // --- Scroll a un índice específico ---
+        function scrollToIndex(i) {
+            const target = i * cardsPerView;
+            const targetCard = cards[target];
+            if (!targetCard) return;
+            scrollContainer.scrollTo({ left: targetCard.offsetLeft, behavior: 'smooth' });
+            index = i;
+            updateDots();
+        }
+
+        // --- Swipe táctil ---
+        let startX = 0;
+        let scrollStart = 0;
+        let isDragging = false;
+
+        scrollContainer.addEventListener('touchstart', e => {
+            startX = e.touches[0].pageX;
+            scrollStart = scrollContainer.scrollLeft;
+            isDragging = true;
+        });
+
+        scrollContainer.addEventListener('touchmove', e => {
+            if (!isDragging) return;
+            const x = e.touches[0].pageX;
+            const walk = startX - x;
+            scrollContainer.scrollLeft = scrollStart + walk;
+        });
+
+        scrollContainer.addEventListener('touchend', () => {
+            isDragging = false;
+            const containerCenter = scrollContainer.scrollLeft + scrollContainer.offsetWidth / 2;
+            let closestIndex = 0;
+            let closestDistance = Infinity;
+            cards.forEach((card, i) => {
+                const cardCenter = card.offsetLeft + card.offsetWidth / 2;
+                const distance = Math.abs(cardCenter - containerCenter);
+                if (distance < closestDistance) {
+                    closestDistance = distance;
+                    closestIndex = i;
+                }
+            });
+            index = Math.floor(closestIndex / cardsPerView);
+            scrollToIndex(index);
+        });
+
+        // --- Flechas de teclado ---
+        scrollContainer.addEventListener('keydown', e => {
+            if (e.key === 'ArrowRight' && index < Math.ceil(cards.length / cardsPerView) - 1) scrollToIndex(index + 1);
+            if (e.key === 'ArrowLeft' && index > 0) scrollToIndex(index - 1);
+        });
+
+        // --- Inicialización ---
+        adjustCardWidth();
+        createDots();
+        updateDots();
+
+        // --- Recalcula al redimensionar ---
+        window.addEventListener('resize', () => {
+            adjustCardWidth();
+            createDots();
+            updateDots();
+        });
+    });
+});
+
+✅ Cómo usarlo:
+
+Cada sección de scroll debe tener la estructura:
+
+<div class="scroll_container">
+  <div class="scroll">
+    <div class="card">...</div>
+    <div class="card">...</div>
+  </div>
+  <div class="scroll-dots"></div>
+</div>
+
+
+Para reviews, usa .scroll_reviews y .card_reviews.
+
+Para services, usa .scroll y .card.
