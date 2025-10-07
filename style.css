@@ -62,6 +62,7 @@ a {
 /* MENU_MOVIL */
 #offcanvasMenu {
     --bs-offcanvas-width: 280px;
+    height: 210px;
     border-radius: 15px;
 }
 
@@ -169,30 +170,29 @@ h5 {
 
 .scroll {
     display: flex;
-    gap: 20px;
-    margin: 0;
+    justify-content: flex-start;
     align-items: center;
+    gap: 20px;
     overflow-x: auto;
     scroll-behavior: smooth;
+    width: 100%;
+    padding-bottom: 10px;
     -webkit-overflow-scrolling: touch;
-    /* optional: mejor UX con scroll-snap */
     scroll-snap-type: x proximity;
 }
 
-
-
 .card {
-      align-items: center;
+    align-items: center;
     justify-content: center;
     background-color: #8fbc8fcc;
     border-radius: 15px;
     flex: 0 0 80%;
-    /* ocupa 80% ancho en móvil */
     max-width: 331px;
-    height:250px;
-    /* evita bloqueo rígido de alto */
-    scroll-snap-align: start;
+    height: 250px;
+    scroll-snap-align: center;
+    text-align: center;
 }
+
 
 .card:hover {
     /*  background-color: #fffef4;
@@ -280,8 +280,29 @@ h5 {
     flex-direction: column;
     width: 100%;
     align-items: flex-end;
-    gap: 33px;
+    gap: 5px;
     position: relative;
+}
+
+input[type="email"] {
+    background-color: #F8F9ED;
+    border: none;
+    font-family: "Inter", sans-serif;
+    font-size: 14px;
+    color: #b1c593;
+    box-shadow: none;
+}
+
+input[type="email"]:focus {
+    outline: 2px solid #8fbc8f;
+    outline-offset: 2px;
+    box-shadow: none;
+
+}
+
+input[type="email"]::placeholder {
+    color: #b1c593;
+    /* #4a4a4a */
 }
 
 .textarea_box {
@@ -311,27 +332,46 @@ h5 {
 }
 
 /* section_reviews */
-
-.scroll,
 .scroll_reviews {
     display: flex;
+    flex-wrap: nowrap;
     justify-content: flex-start;
     align-items: center;
     gap: 20px;
     overflow-x: auto;
+    overflow-y: hidden;
     scroll-behavior: smooth;
     width: 100%;
-    
-    padding-bottom: 10px;
+    padding: 10px 0 15px 0;
+    -webkit-overflow-scrolling: touch;
+     scroll-snap-type: x mandatory;
 }
 
+
 .card_reviews {
+  /*   flex: 0 0 auto; */
+  /*   width: 250px; */
     justify-content: center;
     align-items: center;
     background-color: #F8F9ED;
     padding: 15px;
-
+    border-radius: 15px;
+   /*  display: flex; */
+  /*   flex-direction: column; */
+    scroll-snap-align: start;
+    /* para que se alineen al hacer scroll */
 }
+
+/* .card_reviews {
+ 
+    background-color: #F8F9ED;
+    padding: 15px;
+    border-radius: 15px;
+
+    justify-content: center;
+    align-items: center;
+
+} */
 
 .text_reviews {
     width: 316px;
@@ -340,8 +380,13 @@ h5 {
     font-weight: 300;
     font-style: normal;
     color: #4a4a4a;
-    font-size: 14px;
+    font-size: 12px;
     margin: 20px 0 20px 0;
+}
+
+
+.header_review p {
+    font-weight: bold;
 }
 
 .scroll,
@@ -354,6 +399,9 @@ h5 {
 .scroll_reviews::-webkit-scrollbar {
     display: none;
 }
+
+
+
 /* Dots de navegación */
 .scroll-dots {
     display: flex;
@@ -372,7 +420,7 @@ h5 {
 }
 
 .scroll-dots .dot[aria-selected="true"] {
-    background-color:#8fbc8f;
+    background-color: #8fbc8f;
 }
 
 
