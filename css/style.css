@@ -32,7 +32,8 @@ a {
     font-family: "Cormorant", serif;
     font-optical-sizing: auto;
     font-weight: bold;
-    font-style: normal
+    font-style: normal;
+    transition: color 0.3s ease, background-color 0.3s ease; /* 🟢 transición suave */
 }
 
 .nav-pills .nav-link.active {
@@ -48,6 +49,7 @@ a {
 .navbar-toggler {
     border: none;
     padding: 0.25rem;
+     cursor: pointer; /* 🟢 agregado para indicar clicable */
 }
 
 .navbar-toggler:focus {
@@ -83,32 +85,24 @@ a {
     padding: 12px;
 }
 
-h2 {
+h2, h3, h5 {
     font-family: "Cormorant", serif;
-    font-optical-sizing: auto;
     font-weight: bolder;
     font-style: normal;
     color: #333333;
+}
+
+h2 {
     font-size: 36px;
     margin: 20px 0 40px 0;
 }
 
 h3 {
-    font-family: "Cormorant", serif;
-    font-optical-sizing: auto;
-    font-weight: bolder;
-    font-style: normal;
-    color: #333333;
     font-size: 28px;
     margin: 20px 0 40px 0;
 }
 
 h5 {
-    font-family: "Cormorant", serif;
-    font-optical-sizing: auto;
-    font-weight: bolder;
-    font-style: normal;
-    color: #333333;
     font-size: 20px;
     margin: 20px 0 40px 0;
 }
@@ -165,60 +159,80 @@ h5 {
 
 /* SECTION SERVICES */
 .scroll_container {
-    overflow-x: scroll;
+    overflow-x: hidden;
+    /* MODIFICADO: evita scroll desbordado */
+    position: relative;
+    /* MODIFICADO: para posicionar elementos internos */
 }
 
 .scroll {
     display: flex;
-    justify-content: flex-start;
-    align-items: center;
+    /*  justify-content: flex-start;  */
     gap: 20px;
     overflow-x: auto;
     scroll-behavior: smooth;
     width: 100%;
-    padding-bottom: 10px;
     -webkit-overflow-scrolling: touch;
-    scroll-snap-type: x proximity;
+    align-items: stretch;
+    /* MODIFICADO: alinea las cards uniformemente en altura */
+    gap: 20px;
+    padding: 10px 0;
+    /* MODIFICADO: da respiro vertical */
+    scroll-snap-type: x mandatory;
+    /* MODIFICADO: mejor snapping */
 }
 
 .card {
-    align-items: center;
+    flex: 0 0 auto;
+    /* MODIFICADO: evita recorte lateral */
+    width: clamp(250px, 80%, 320px);
+    /* MODIFICADO: ancho adaptable a viewport */
+    min-height: 230px;
+    /* MODIFICADO: altura más equilibrada */
+    border-radius: 15px;
+    scroll-snap-align: start;
+    text-align: center;
+    display: flex;
+    /**/
+    flex-direction: column;
+    /**/
     justify-content: center;
     background-color: #8fbc8fcc;
-    border-radius: 15px;
-    flex: 0 0 80%;
-    max-width: 331px;
-    height: 250px;
-    scroll-snap-align: center;
-    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* MODIFICADO */
 }
 
-
 .card:hover {
-    /*  background-color: #fffef4;
-    color: #8fbc8f; */
-    box-shadow: 4px 4px 8px hsla(0, 0%, 0%, 0.5);
+    box-shadow: 4px 4px 8px hsla(0, 0%, 0%, 0.4);
+    transform: translateY(-3px);
+    /* MODIFICADO */
 
 }
 
 .service_title {
     font-family: "Cormorant", serif;
-    font-optical-sizing: auto;
-    font-style: normal;
     font-weight: bolder;
-    font-size: 24px;
     color: #333333;
     margin-bottom: 10px;
+    font-size: clamp(18px, 4vw, 24px);
+    /* MODIFICADO: responsivo */
 }
 
 .service_text {
     font-family: "Inter", sans-serif;
-    font-optical-sizing: auto;
-    font-style: normal;
+    /*     font-optical-sizing: auto; */
+
     font-weight: 600;
     font-size: 16px;
     color: #4a4a4a;
     margin-bottom: 5px;
+
+
+
+
+    font-size: clamp(12px, 3vw, 16px);
+    /* MODIFICADO: responsivo */
+
 }
 
 /* servicios version masonery */
@@ -334,31 +348,35 @@ input[type="email"]::placeholder {
 /* section_reviews */
 
 .scroll_container_reviews {
-  overflow-x: auto;
-  overflow-y: hidden;
-  scroll-snap-type: x mandatory;
-  display: flex;
-  justify-content: center;
-  align-items: stretch;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
 }
+
 .scroll_reviews {
     display: flex;
     flex-wrap: nowrap;
     gap: 20px;
     overflow-x: auto;
     scroll-behavior: smooth;
-   /*  padding: 10px 0 15px 0; */
+    /*  padding: 10px 0 15px 0; */
     -webkit-overflow-scrolling: touch;
     scroll-snap-type: x mandatory;
 }
 
 
 .card_reviews {
-    flex: 0 0 auto; /* importante para que no se compriman ni se envuelvan */
+    flex: 0 0 auto;
+    
+    /* importante para que no se compriman ni se envuelvan */
     box-sizing: border-box;
-    width: clamp(280px, 90%, 340px); /* responsivo: mínimo 280px, máximo 340px, relativo al contenedor */
-   max-height: 190px;
-    padding: 15px;  
+    width: clamp(280px, 90%, 340px);
+    /* responsivo: mínimo 280px, máximo 340px, relativo al contenedor */
+    max-height: 220px;
+    padding: 15px;
     border-radius: 15px;
     background-color: #F8F9ED;
     scroll-snap-align: start;
@@ -366,20 +384,23 @@ input[type="email"]::placeholder {
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    
+
 }
 
 .header_review p {
     font-weight: bold;
 }
+
 .text_reviews {
-    width: 100%; /* ocupa todo el ancho de la card */
+    width: 100%;
+    /* ocupa todo el ancho de la card */
     font-family: "Inter", sans-serif;
     font-weight: 300;
-    font-size: clamp(10px, 2vw, 10px); /* escala el texto según la pantalla */
- 
-}
+    font-size: clamp(10px, 2vw, 10px);
+    /* escala el texto según la pantalla */
+    margin:0 !important;
 
+}
 
 .scroll,
 .scroll_reviews {
@@ -392,20 +413,22 @@ input[type="email"]::placeholder {
     display: none;
 }
 
-
-
 /* =========================
    Dots de navegación mejorados
 ========================= */
+.scroll-dots-services,
 .scroll-dots {
     display: flex;
     justify-content: center;
     margin-top: 10px;
-    gap: 8px; /* un poquito más de separación */
+    gap: 8px;
+    /* un poquito más de separación */
 }
 
+.scroll-dots-services .dot,
 .scroll-dots .dot {
-    width: 10px;   /* tamaño visual */
+    width: 10px;
+    /* tamaño visual */
     height: 10px;
     border-radius: 50%;
     background-color: gray;
@@ -419,17 +442,39 @@ input[type="email"]::placeholder {
     transition: background-color 0.3s ease;
 }
 
+.scroll-dots-services .dot[aria-selected="true"] {
+    background-color: #8fbc8f;
+}
+
 .scroll-dots .dot[aria-selected="true"] {
     background-color: #8fbc8f;
 }
 
-.scroll-dots .dot:focus {
-    outline: 2px solid #8fbc8f;
+.scroll-dots-services.dot:focus {
+    /*   outline: 2px solid #8fbc8f; */
     outline-offset: 2px;
 }
 
+.scroll-dots .dot:focus {
+    /*    outline: 2px solid #8fbc8f; */
+    outline-offset: 2px;
+}
 
-@media (max-width: 767.98px) {
+/* =========================
+   BREAKPOINTS UNIFICADOS
+========================= */
+
+/* ----------------------------
+   Mobile - Extra pequeño (<600px)
+   ---------------------------- */
+@media (max-width: 599px) {
+
+    .card,
+    .card_reviews {
+        width: 100%; /* 🟢 1 card visible */
+    }
+
+    /* 🟢 Ajuste margen navbar para móviles */
     .navbar-collapse {
         margin-top: 1rem;
     }
@@ -440,23 +485,54 @@ input[type="email"]::placeholder {
     }
 }
 
-/*  revisar esto
- */
-@media (min-width: 992px) {
-    .card {
-        flex: 0 0 300px;
+/* ----------------------------
+   Mobile / Tablet - Pequeño (600px - 767.98px)
+   ---------------------------- */
+@media (min-width: 600px) and (max-width: 767.98px) {
+
+    .card,
+    .card_reviews {
+        width: calc((100% - 20px) / 2); /* 🟢 2 cards visibles con gap de 20px */
     }
 
-    /* desktop cards fijos */
-    .scroll {
-        overflow-x: visible;
+    /* 🟢 Ajuste margen navbar para móviles grandes */
+    .navbar-collapse {
+        margin-top: 1rem;
     }
 
-    /* en desktop quizá no quieras scroll */
+    .nav-pills .nav-link {
+        text-align: left;
+        margin-bottom: 0.5rem;
+    }
 }
 
-@media (min-width: 768px) and (max-width: 1024px) {
+/* ----------------------------
+   Tablet / Mediano (768px - 991px)
+   ---------------------------- */
+@media (min-width: 768px) and (max-width: 991px) {
+
+    .card,
     .card_reviews {
-        width: calc((100% - 20px) / 2); /* 2 cards visibles con gap de 20px */
+        width: calc((100% - 20px) / 2); /* 🟢 2 cards visibles con gap de 20px */
+        overflow-x: auto; /* 🟢 mantener scroll horizontal en tablet */
+    }
+}
+
+/* ----------------------------
+   Desktop - Grande (>=992px)
+   ---------------------------- */
+@media (min-width: 992px) {
+
+    .card {
+        flex: 0 0 300px; /* 🟢 ancho fijo desktop */
+        width: 300px;    /* 🟢 ancho fijo desktop */
+    }
+
+    .card_reviews {
+        width: 300px;    /* 🟢 ancho fijo reviews desktop */
+    }
+
+    .scroll {
+        overflow-x: visible; /* 🔴 evitar scroll forzado que rompía diseño */
     }
 }

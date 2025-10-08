@@ -22,7 +22,7 @@
 
 
     <!-- 4. Tu CSS personalizado -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css" />
 </head>
 
 <body>
@@ -31,7 +31,7 @@
         <header class="border-bottom">
             <nav class="navbar navbar-expand-md py-3">
                 <div class="container-fluid">
-                    <a href="/" class="navbar-brand d-flex align-items-center text-decoration-none">
+                    <a href="#" class="navbar-brand d-flex align-items-center text-decoration-none">
                         <svg class="bi me-2" width="40" height="32" aria-hidden="true">
                             <use xlink:href="#bootstrap"></use>
                         </svg>
@@ -62,9 +62,6 @@
                                 <li class="nav-item">
                                     <a href="#contact" class="nav-link">Contact</a>
                                 </li>
-                                <!--  <li class="nav-item">
-                                    <a href="#" class="nav-link">About</a>
-                                </li> -->
                             </ul>
                         </div>
                     </div>
@@ -81,9 +78,6 @@
                             <li class="nav-item">
                                 <a href="about" class="nav-link">About</a>
                             </li>
-                            <!--    <li class="nav-item">
-                                <a href="#" class="nav-link">FAQs</a>
-                            </li> -->
                             <li class="nav-item">
                                 <a href="#contact" class="nav-link">Contact</a>
                             </li>
@@ -213,6 +207,15 @@
                     </div>
                 </div>
             </div>
+            <!-- 🔵 Dots de navegación accesibles -->
+            <div class="scroll-dots-services d-flex justify-content-center mt-3 d-block d-lg-none" role="tablist"
+                aria-label="Review navigation">
+                <button role="tab" aria-selected="true" class="dot btn-sm rounded-circle me-2"></button>
+                <button role="tab" aria-selected="false" class="dot btn-sm rounded-circle me-2"></button>
+                <button role="tab" aria-selected="false" class="dot btn-sm rounded-circle me-2"></button>
+                <button role="tab" aria-selected="false" class="dot btn-sm rounded-circle me-2"></button>
+                <button role="tab" aria-selected="false" class="dot btn-sm rounded-circle"></button>
+            </div>
         </section>
 
         <!-- section_services_desktop -->
@@ -249,6 +252,8 @@
                     </div>
                 </div>
             </div>
+
+
         </div>
 
         <div class="divider my-2 py-3 my-sm-2 py-sm-2 my-md-4 py-md-4"></div>
@@ -295,352 +300,263 @@
         <!-- reviews section -->
         <section id="reviews" aria-labelledby="reviews-heading" class="container px-4">
             <h3 id="reviews-heading">Customer Reviews</h3>
+
+            <!-- Definición del icono de estrella SVG -->
+            <svg style="display: none;">
+                <defs>
+                    <symbol id="star-fill" viewBox="0 0 16 16" fill="#fdcc0d">
+                        <path
+                            d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                    </symbol>
+                </defs>
+            </svg>
+
             <div class="scroll_container_reviews" tabindex="0">
                 <div class="scroll_reviews" role="list" aria-label="Customer testimonials">
-                    <!-- luci-->
+
+                    <!-- Luci -->
                     <div class="card_reviews" role="listitem">
                         <blockquote class="text_reviews">
                             <div class="header_review d-flex justify-content gap-4 align-items-baseline">
-                                <div class="star_reviews mb-2">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fdcc0d"
-                                        class="bi bi-star-fill" viewBox="0 0 16 16">
-                                        <path
-                                            d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                <div class="star_reviews mb-2" aria-label="5 out of 5 stars">
+                                    <svg width="16" height="16">
+                                        <use href="#star-fill" />
                                     </svg>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fdcc0d"
-                                        class="bi bi-star-fill" viewBox="0 0 16 16">
-                                        <path
-                                            d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                    <svg width="16" height="16">
+                                        <use href="#star-fill" />
                                     </svg>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fdcc0d"
-                                        class="bi bi-star-fill" viewBox="0 0 16 16">
-                                        <path
-                                            d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                    <svg width="16" height="16">
+                                        <use href="#star-fill" />
                                     </svg>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fdcc0d"
-                                        class="bi bi-star-fill" viewBox="0 0 16 16">
-                                        <path
-                                            d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                    <svg width="16" height="16">
+                                        <use href="#star-fill" />
                                     </svg>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fdcc0d"
-                                        class="bi bi-star-fill" viewBox="0 0 16 16">
-                                        <path
-                                            d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                    <svg width="16" height="16">
+                                        <use href="#star-fill" />
                                     </svg>
                                 </div>
                                 <p class="mb-2">Luci Coppa</p>
                             </div>
-                            <p> I highly recommend to anyone to take a massage in
-                                this studio. I was impressed by the quality and
-                                dedication of the therapy I received.
-                                <br>After the one and a half hour massage I was truly
-                                relaxed. I felt in the clouds. And the next days I felt
-                                the effects too. I suffer with chronic pain, and it
-                                was gone. What a relief! <br>Will definitely be back. It was one of the best
-                                massages I have ever had.<br>10.08.2024, 09:20
-                            </p>
+                            <p>I highly recommend to anyone to take a massage in this studio. I was impressed by the
+                                quality and dedication of the therapy I received. After the one and a half hour massage
+                                I was truly relaxed. I felt in the clouds. And the next days I felt the effects too. I
+                                suffer with chronic pain, and it was gone. What a relief! Will definitely be back. It
+                                was one of the best massages I have ever had.<br>10.08.2024, 09:20</p>
                         </blockquote>
                     </div>
-                    <!-- irma-->
+
+                    <!-- Irma -->
                     <div class="card_reviews" role="listitem">
                         <blockquote class="text_reviews">
                             <div class="header_review d-flex justify-content gap-4 align-items-baseline">
-                                <div class="star_reviews mb-2">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fdcc0d"
-                                        class="bi bi-star-fill" viewBox="0 0 16 16">
-                                        <path
-                                            d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                <div class="star_reviews mb-2" aria-label="5 out of 5 stars">
+                                    <svg width="16" height="16">
+                                        <use href="#star-fill" />
                                     </svg>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fdcc0d"
-                                        class="bi bi-star-fill" viewBox="0 0 16 16">
-                                        <path
-                                            d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                    <svg width="16" height="16">
+                                        <use href="#star-fill" />
                                     </svg>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fdcc0d"
-                                        class="bi bi-star-fill" viewBox="0 0 16 16">
-                                        <path
-                                            d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                    <svg width="16" height="16">
+                                        <use href="#star-fill" />
                                     </svg>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fdcc0d"
-                                        class="bi bi-star-fill" viewBox="0 0 16 16">
-                                        <path
-                                            d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                    <svg width="16" height="16">
+                                        <use href="#star-fill" />
                                     </svg>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fdcc0d"
-                                        class="bi bi-star-fill" viewBox="0 0 16 16">
-                                        <path
-                                            d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                    <svg width="16" height="16">
+                                        <use href="#star-fill" />
                                     </svg>
                                 </div>
                                 <p class="mb-2">Irma Fernandez</p>
                             </div>
-                            <p> Bryan is excellent, very professional and respectful,
-                                the massage was exceptional, the place is very nice
-                                and clean. I recommend it 100%.<br>03.05.2025, 22:45
-                            </p>
+                            <p>Bryan is excellent, very professional and respectful, the massage was exceptional, the
+                                place is very nice and clean. I recommend it 100%.<br>03.05.2025, 22:45</p>
                         </blockquote>
                     </div>
-                    <!-- c -->
+
+                    <!-- C -->
                     <div class="card_reviews" role="listitem">
                         <blockquote class="text_reviews">
                             <div class="header_review d-flex justify-content gap-4 align-items-baseline">
-                                <div class="star_reviews mb-2">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fdcc0d"
-                                        class="bi bi-star-fill" viewBox="0 0 16 16">
-                                        <path
-                                            d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                <div class="star_reviews mb-2" aria-label="5 out of 5 stars">
+                                    <svg width="16" height="16">
+                                        <use href="#star-fill" />
                                     </svg>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fdcc0d"
-                                        class="bi bi-star-fill" viewBox="0 0 16 16">
-                                        <path
-                                            d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                    <svg width="16" height="16">
+                                        <use href="#star-fill" />
                                     </svg>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fdcc0d"
-                                        class="bi bi-star-fill" viewBox="0 0 16 16">
-                                        <path
-                                            d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                    <svg width="16" height="16">
+                                        <use href="#star-fill" />
                                     </svg>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fdcc0d"
-                                        class="bi bi-star-fill" viewBox="0 0 16 16">
-                                        <path
-                                            d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                    <svg width="16" height="16">
+                                        <use href="#star-fill" />
                                     </svg>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fdcc0d"
-                                        class="bi bi-star-fill" viewBox="0 0 16 16">
-                                        <path
-                                            d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                    <svg width="16" height="16">
+                                        <use href="#star-fill" />
                                     </svg>
                                 </div>
                                 <p class="mb-2">C</p>
                             </div>
-                            <p> Atabey is a true sanctuary and Roger is nothing
-                                short of extraordinary. Roger’s expertise and
-                                intuitive approach to massage therapy are
-                                unmatched. He doesn’t just address tension; he
-                                seems to understand it, working with precision and
-                                a genuine attentiveness that makes every session
-                                transformative. I left feeling lighter and grounded.
-                                If you're looking for someone who brings both
-                                exceptional skill and heart to their work, look no
-                                further.<br>08.12.2024, 18:35
-                            </p>
+                            <p>Atabey is a true sanctuary and Roger is nothing short of extraordinary. Roger’s expertise
+                                and intuitive approach to massage therapy are unmatched. He doesn’t just address
+                                tension; he seems to understand it, working with precision and a genuine attentiveness
+                                that makes every session transformative. I left feeling lighter and grounded. If you're
+                                looking for someone who brings both exceptional skill and heart to their work, look no
+                                further.<br>08.12.2024, 18:35</p>
                         </blockquote>
                     </div>
-                    <!-- olaf -->
+
+                    <!-- Olaf -->
                     <div class="card_reviews" role="listitem">
                         <blockquote class="text_reviews">
                             <div class="header_review d-flex justify-content gap-4 align-items-baseline">
-                                <div class="star_reviews mb-2">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fdcc0d"
-                                        class="bi bi-star-fill" viewBox="0 0 16 16">
-                                        <path
-                                            d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                <div class="star_reviews mb-2" aria-label="5 out of 5 stars">
+                                    <svg width="16" height="16">
+                                        <use href="#star-fill" />
                                     </svg>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fdcc0d"
-                                        class="bi bi-star-fill" viewBox="0 0 16 16">
-                                        <path
-                                            d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                    <svg width="16" height="16">
+                                        <use href="#star-fill" />
                                     </svg>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fdcc0d"
-                                        class="bi bi-star-fill" viewBox="0 0 16 16">
-                                        <path
-                                            d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                    <svg width="16" height="16">
+                                        <use href="#star-fill" />
                                     </svg>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fdcc0d"
-                                        class="bi bi-star-fill" viewBox="0 0 16 16">
-                                        <path
-                                            d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                    <svg width="16" height="16">
+                                        <use href="#star-fill" />
                                     </svg>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fdcc0d"
-                                        class="bi bi-star-fill" viewBox="0 0 16 16">
-                                        <path
-                                            d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                    <svg width="16" height="16">
+                                        <use href="#star-fill" />
                                     </svg>
                                 </div>
                                 <p class="mb-2">Olaf</p>
                             </div>
-                            <p> Ich kann die Sportmassage bei Brayam
-                                nachdritcklich empfehlen. Er ist äußerst
-                                professionell und berücksichtigt individuelle
-                                Wünsche. Seine freundliche Art schafft zudem eine
-                                angenehme Atmosphäre. Nach jeder Sitzung fühle
-                                ich mich rundum entspannt und erholt.<br>05.07.2024, 13:56
-                            </p>
+                            <p>Ich kann die Sportmassage bei Brayam nachdritcklich empfehlen. Er ist äußerst
+                                professionell und berücksichtigt individuelle Wünsche. Seine freundliche Art schafft
+                                zudem eine angenehme Atmosphäre. Nach jeder Sitzung fühle ich mich rundum entspannt und
+                                erholt.<br>05.07.2024, 13:56</p>
                         </blockquote>
                     </div>
-                    <!-- laura por hacer -->
+
+                    <!-- Laura -->
                     <div class="card_reviews" role="listitem">
                         <blockquote class="text_reviews">
                             <div class="header_review d-flex justify-content gap-4 align-items-baseline">
-                                <div class="star_reviews mb-2">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fdcc0d"
-                                        class="bi bi-star-fill" viewBox="0 0 16 16">
-                                        <path
-                                            d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                <div class="star_reviews mb-2" aria-label="5 out of 5 stars">
+                                    <svg width="16" height="16">
+                                        <use href="#star-fill" />
                                     </svg>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fdcc0d"
-                                        class="bi bi-star-fill" viewBox="0 0 16 16">
-                                        <path
-                                            d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                    <svg width="16" height="16">
+                                        <use href="#star-fill" />
                                     </svg>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fdcc0d"
-                                        class="bi bi-star-fill" viewBox="0 0 16 16">
-                                        <path
-                                            d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                    <svg width="16" height="16">
+                                        <use href="#star-fill" />
                                     </svg>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fdcc0d"
-                                        class="bi bi-star-fill" viewBox="0 0 16 16">
-                                        <path
-                                            d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                    <svg width="16" height="16">
+                                        <use href="#star-fill" />
                                     </svg>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fdcc0d"
-                                        class="bi bi-star-fill" viewBox="0 0 16 16">
-                                        <path
-                                            d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                    <svg width="16" height="16">
+                                        <use href="#star-fill" />
                                     </svg>
                                 </div>
                                 <p class="mb-2">Laura</p>
                             </div>
-                            <p> Die Massage bei Roger hat mir wieder neue Energie gegeben!
-                                Ich bin gestresst und verspannt hin und bin wie ein anderer Mensch,
-                                völlig entspannt wieder raus. Roger hat alle Verspannungen erkannt und gelöst.
-                                Noch dazu ist er sehr aufmerksam und schafft eine angenehme Atmosphäre,
-                                in der man sich wohl fühlt. Ein Moment nur für mich.
-                                Kann ich jedem ans Herz legen!<br>15.09.2024, 13:59
-                            </p>
+                            <p>Die Massage bei Roger hat mir wieder neue Energie gegeben! Ich bin gestresst und
+                                verspannt hin und bin wie ein anderer Mensch, völlig entspannt wieder raus. Roger hat
+                                alle Verspannungen erkannt und gelöst. Noch dazu ist er sehr aufmerksam und schafft eine
+                                angenehme Atmosphäre, in der man sich wohl fühlt. Ein Moment nur für mich. Kann ich
+                                jedem ans Herz legen!<br>15.09.2024, 13:59</p>
                         </blockquote>
                     </div>
-                    <!-- jannik falta emoji -->
+
+                    <!-- Jannik -->
                     <div class="card_reviews" role="listitem">
                         <blockquote class="text_reviews">
                             <div class="header_review d-flex justify-content gap-4 align-items-baseline">
-                                <div class="star_reviews mb-2">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fdcc0d"
-                                        class="bi bi-star-fill" viewBox="0 0 16 16">
-                                        <path
-                                            d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                <div class="star_reviews mb-2" aria-label="5 out of 5 stars">
+                                    <svg width="16" height="16">
+                                        <use href="#star-fill" />
                                     </svg>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fdcc0d"
-                                        class="bi bi-star-fill" viewBox="0 0 16 16">
-                                        <path
-                                            d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                    <svg width="16" height="16">
+                                        <use href="#star-fill" />
                                     </svg>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fdcc0d"
-                                        class="bi bi-star-fill" viewBox="0 0 16 16">
-                                        <path
-                                            d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                    <svg width="16" height="16">
+                                        <use href="#star-fill" />
                                     </svg>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fdcc0d"
-                                        class="bi bi-star-fill" viewBox="0 0 16 16">
-                                        <path
-                                            d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                    <svg width="16" height="16">
+                                        <use href="#star-fill" />
                                     </svg>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fdcc0d"
-                                        class="bi bi-star-fill" viewBox="0 0 16 16">
-                                        <path
-                                            d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                    <svg width="16" height="16">
+                                        <use href="#star-fill" />
                                     </svg>
                                 </div>
                                 <p class="mb-2">Jannik</p>
                             </div>
-                            <p> Das Studio hat eine wunderbar charmante,
-                                familiäre und gemütliche Atmosphäre. Roger ist
-                                unfassbar zuvorkommend. Hier werden die
-                                Bedürfnisse und Erwartungen vor der Massage
-                                erfragt und während der Behandlung gezielt, aber
-                                jederzeit angenehm auf diese eingegangen! Ich
-                                habe mich danach wunderbar frei gefühlt und
-                                freue mich schon auf den nächsten Termin! Gracias
-                                Roger <!-- emoji --><br>12.06.2024, 16:55
-                            </p>
+                            <p>Das Studio hat eine wunderbar charmante, familiäre und gemütliche Atmosphäre. Roger ist
+                                unfassbar zuvorkommend. Hier werden die Bedürfnisse und Erwartungen vor der Massage
+                                erfragt und während der Behandlung gezielt, aber jederzeit angenehm auf diese
+                                eingegangen! Ich habe mich danach wunderbar frei gefühlt und freue mich schon auf den
+                                nächsten Termin! Gracias Roger<br>12.06.2024, 16:55</p>
                         </blockquote>
                     </div>
-                    <!--  jack por hacer-->
+
+                    <!-- Jack -->
                     <div class="card_reviews" role="listitem">
                         <blockquote class="text_reviews">
                             <div class="header_review d-flex justify-content gap-4 align-items-baseline">
-                                <div class="star_reviews mb-2">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fdcc0d"
-                                        class="bi bi-star-fill" viewBox="0 0 16 16">
-                                        <path
-                                            d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                <div class="star_reviews mb-2" aria-label="5 out of 5 stars">
+                                    <svg width="16" height="16">
+                                        <use href="#star-fill" />
                                     </svg>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fdcc0d"
-                                        class="bi bi-star-fill" viewBox="0 0 16 16">
-                                        <path
-                                            d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                    <svg width="16" height="16">
+                                        <use href="#star-fill" />
                                     </svg>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fdcc0d"
-                                        class="bi bi-star-fill" viewBox="0 0 16 16">
-                                        <path
-                                            d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                    <svg width="16" height="16">
+                                        <use href="#star-fill" />
                                     </svg>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fdcc0d"
-                                        class="bi bi-star-fill" viewBox="0 0 16 16">
-                                        <path
-                                            d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                    <svg width="16" height="16">
+                                        <use href="#star-fill" />
                                     </svg>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fdcc0d"
-                                        class="bi bi-star-fill" viewBox="0 0 16 16">
-                                        <path
-                                            d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                    <svg width="16" height="16">
+                                        <use href="#star-fill" />
                                     </svg>
                                 </div>
                                 <p class="mb-2">Jack</p>
                             </div>
-                            <p>The best deep tissue massage I've found in Berlin!<br>29.03.2024, 14:56
-                            </p>
+                            <p>The best deep tissue massage I've found in Berlin!<br>29.03.2024, 14:56</p>
                         </blockquote>
                     </div>
-                    <!-- noemi -->
+
+                    <!-- Noémie -->
                     <div class="card_reviews" role="listitem">
                         <blockquote class="text_reviews">
                             <div class="header_review d-flex justify-content gap-4 align-items-baseline">
-                                <div class="star_reviews mb-2">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fdcc0d"
-                                        class="bi bi-star-fill" viewBox="0 0 16 16">
-                                        <path
-                                            d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                <div class="star_reviews mb-2" aria-label="5 out of 5 stars">
+                                    <svg width="16" height="16">
+                                        <use href="#star-fill" />
                                     </svg>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fdcc0d"
-                                        class="bi bi-star-fill" viewBox="0 0 16 16">
-                                        <path
-                                            d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                    <svg width="16" height="16">
+                                        <use href="#star-fill" />
                                     </svg>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fdcc0d"
-                                        class="bi bi-star-fill" viewBox="0 0 16 16">
-                                        <path
-                                            d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                    <svg width="16" height="16">
+                                        <use href="#star-fill" />
                                     </svg>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fdcc0d"
-                                        class="bi bi-star-fill" viewBox="0 0 16 16">
-                                        <path
-                                            d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                    <svg width="16" height="16">
+                                        <use href="#star-fill" />
                                     </svg>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fdcc0d"
-                                        class="bi bi-star-fill" viewBox="0 0 16 16">
-                                        <path
-                                            d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                    <svg width="16" height="16">
+                                        <use href="#star-fill" />
                                     </svg>
                                 </div>
                                 <p class="mb-2">Noémie</p>
                             </div>
-                            <p>
-                                Brayam is a magician! This was one of the best
-                                massages of my life. I came with hip pain and he
-                                relieved me from pains I didn’t even know I had. I
-                                can recommend him 100% and am definitely going
-                                again. <br>01.07.2024, 11:21
-                            </p>
+                            <p>Brayam is a magician! This was one of the best massages of my life. I came with hip pain
+                                and he relieved me from pains I didn’t even know I had. I can recommend him 100% and am
+                                definitely going again.<br>01.07.2024, 11:21</p>
                         </blockquote>
                     </div>
+
                 </div>
-
-                <!--  -->
-                <!-- 🔵 Dots de navegación accesibles -->
-
-                <!--  -->
             </div>
+
+            <!-- 🔵 Dots de navegación accesibles -->
             <div class="scroll-dots d-flex justify-content-center mt-3" role="tablist" aria-label="Review navigation">
                 <button role="tab" aria-selected="true" class="dot btn-sm rounded-circle me-2"></button>
                 <button role="tab" aria-selected="false" class="dot btn-sm rounded-circle me-2"></button>
@@ -648,10 +564,7 @@
                 <button role="tab" aria-selected="false" class="dot btn-sm rounded-circle me-2"></button>
                 <button role="tab" aria-selected="false" class="dot btn-sm rounded-circle"></button>
             </div>
-
         </section>
-
-
 
         <div class="divider my-2 py-3 my-sm-2 py-sm-2 my-md-4 py-md-5"></div>
 
@@ -660,12 +573,19 @@
     <!-- footer -->
     <div class="container">
         <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
-            <div class="col-md-4 d-flex align-items-center"> <a href="/"
-                    class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1" aria-label="Bootstrap">
+            <div class="col-md-4 d-flex align-items-center">
+
+                <!-- se puede poner logo pero no estoy segura si se vra bien -->
+                <!--  <a href="index.html" class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1"
+                    aria-label="Bootstrap">
                     <svg class="bi" width="30" height="24" aria-hidden="true">
                         <use xlink:href="#bootstrap" symbol id="bootstrap"></use>
-                    </svg> </a> <span class="mb-3 mb-md-0 text-body-secondary">© 2025 Atabey Studio</span> </div>
-            <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+                    </svg>
+                </a> -->
+
+                <span class="mb-0 mb-md-0 text-body-secondary ms-4">© 2025 Atabey Studio</span>
+            </div>
+            <ul class="nav col-md-4 justify-content-end list-unstyled d-flex me-4">
                 <!-- current color -->
                 <li class="ms-3">
                     <a class="text-body-secondary"
@@ -709,138 +629,10 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-        crossorigin="anonymous"></script>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const button = document.getElementById('btnServices');
-            if (button) {
-                const mq = window.matchMedia('(max-width: 991.98px)');
-                button.addEventListener('click', () => {
-                    const isMobile = mq.matches;
-                    const section = isMobile ? document.getElementById('services_others') : document.getElementById('services_desktop');
-                    if (!section) return;
-                    section.setAttribute('tabindex', '-1');
-                    section.focus({ preventScroll: true });
-                    section.scrollIntoView({ behavior: 'smooth' });
-                });
-            }
-
-            /* version nueva revia tu personalemtne el js */
-            const scrollContainer = document.querySelector('.scroll_reviews');
-            const dotsContainer = document.querySelector('.scroll-dots');
-
-            if (scrollContainer && dotsContainer) {
-                const cards = Array.from(scrollContainer.querySelectorAll('.card_reviews'));
-                let index = 0;
-                let cardsPerView = 1;
-
-                // --- Ajusta el ancho de las cards según el ancho del contenedor ---
-                function adjustCardWidth() {
-                    const containerWidth = scrollContainer.offsetWidth;
-                    cardsPerView = containerWidth < 600 ? 1 :
-                        containerWidth < 900 ? 2 : 3; // ajusta según breakpoint
-                    const newWidth = (containerWidth - (cardsPerView - 1) * 20) / cardsPerView; // 20px = gap
-                    cards.forEach(card => card.style.width = `${newWidth}px`);
-                }
-
-                // --- Calcula cuántas tarjetas caben en la vista ---
-                function calculateCardsPerView() {
-                    const containerWidth = scrollContainer.offsetWidth;
-                    const cardWidth = cards[0].offsetWidth + 20; // ajustar gap si no es 20px
-                    cardsPerView = Math.max(1, Math.floor(containerWidth / cardWidth));
-                }
-
-                // --- Crea los dots de navegación ---
-                function createDots() {
-                    dotsContainer.innerHTML = '';
-                    const totalDots = Math.ceil(cards.length / cardsPerView);
-                    for (let i = 0; i < totalDots; i++) {
-                        const btn = document.createElement('button');
-                        btn.classList.add('dot'); // importante para el CSS
-                        btn.setAttribute('aria-label', `Slide ${i + 1}`);
-                        btn.setAttribute('aria-selected', i === 0 ? 'true' : 'false');
-                        btn.addEventListener('click', () => scrollToIndex(i));
-                        dotsContainer.appendChild(btn);
-                    }
-                }
-
-                // --- Actualiza el estado de los dots ---
-                function updateDots() {
-                    const dots = dotsContainer.querySelectorAll('.dot');
-                    dots.forEach((dot, i) => dot.setAttribute('aria-selected', i === index ? 'true' : 'false'));
-                }
-
-                // --- Scroll a un índice específico ---
-                function scrollToIndex(i) {
-                    const target = i * cardsPerView;
-                    const targetCard = cards[target];
-                    if (!targetCard) return;
-                    scrollContainer.scrollTo({ left: targetCard.offsetLeft, behavior: 'smooth' });
-                    index = i;
-                    updateDots();
-                }
-
-                // --- Swipe táctil ---
-                let startX = 0;
-                let scrollStart = 0;
-                let isDragging = false;
-
-                scrollContainer.addEventListener('touchstart', e => {
-                    startX = e.touches[0].pageX;
-                    scrollStart = scrollContainer.scrollLeft;
-                    isDragging = true;
-                });
-
-                scrollContainer.addEventListener('touchmove', e => {
-                    if (!isDragging) return;
-                    const x = e.touches[0].pageX;
-                    const walk = startX - x;
-                    scrollContainer.scrollLeft = scrollStart + walk;
-                });
-
-                scrollContainer.addEventListener('touchend', () => {
-                    isDragging = false;
-                    const containerCenter = scrollContainer.scrollLeft + scrollContainer.offsetWidth / 2;
-                    let closestIndex = 0;
-                    let closestDistance = Infinity;
-                    cards.forEach((card, i) => {
-                        const cardCenter = card.offsetLeft + card.offsetWidth / 2;
-                        const distance = Math.abs(cardCenter - containerCenter);
-                        if (distance < closestDistance) {
-                            closestDistance = distance;
-                            closestIndex = i;
-                        }
-                    });
-                    index = Math.floor(closestIndex / cardsPerView);
-                    scrollToIndex(index);
-                });
-
-                // --- Arrow keys para desktop ---
-                scrollContainer.addEventListener('keydown', e => {
-                    if (e.key === 'ArrowRight' && index < Math.ceil(cards.length / cardsPerView) - 1) scrollToIndex(index + 1);
-                    if (e.key === 'ArrowLeft' && index > 0) scrollToIndex(index - 1);
-                });
-
-                // --- Inicialización ---
-                adjustCardWidth();        // ajusta el ancho de las cards
-                calculateCardsPerView();  // calcula cuántas cards entran
-                createDots();
-                updateDots();
-
-                // --- Recalcula al redimensionar ---
-                window.addEventListener('resize', () => {
-                    adjustCardWidth();      // ajusta ancho al cambiar tamaño
-                    calculateCardsPerView();
-                    createDots();
-                    updateDots();
-                });
-            }
-
-
-
-        });
+        crossorigin="anonymous">
     </script>
+   <script src="js/main.js" defer></script>
+
 
 </body>
 
