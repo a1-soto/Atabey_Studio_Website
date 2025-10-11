@@ -31,7 +31,8 @@ a {
     font-optical-sizing: auto;
     font-weight: bold;
     font-style: normal;
-    transition: color 0.3s ease, background-color 0.3s ease; /* 🟢 transición suave */
+    transition: color 0.3s ease, background-color 0.3s ease;
+    /* 🟢 transición suave */
 }
 
 .nav-pills .nav-link.active {
@@ -47,7 +48,7 @@ a {
 .navbar-toggler {
     border: none;
     padding: 0.25rem;
-     cursor: pointer; 
+    cursor: pointer;
 }
 
 .navbar-toggler:focus {
@@ -83,7 +84,9 @@ a {
     padding: 12px;
 }
 
-h2, h3 {
+h2,
+h3,
+h4 {
     font-family: "Cormorant", serif;
     font-weight: bolder;
     font-style: normal;
@@ -100,10 +103,10 @@ h3 {
     margin: 20px 0 40px 0;
 }
 
-/* H4:25 h5 {
-    font-size: 20px;
+h4 {
+    font-size: 25px;
     margin: 20px 0 40px 0;
-} */
+}
 
 .text {
     font-family: "Inter", sans-serif;
@@ -133,7 +136,8 @@ h3 {
 }
 
 .button:hover {
-    background-color: #8fbc8fcc;
+    transform: scale(1.05);
+    box-shadow: 0 8px 25px rgba(45, 106, 79, 0.5);
 }
 
 .button:focus {
@@ -167,7 +171,7 @@ h3 {
 
 .scroll {
     display: flex;
-      gap: 20px;
+    gap: 20px;
     overflow-x: auto;
     scroll-behavior: smooth;
     width: 100%;
@@ -192,17 +196,17 @@ h3 {
     scroll-snap-align: start;
     text-align: center;
     display: flex;
-      flex-direction: column;
-       justify-content: center;
-    background-color: #8fbc8fcc;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #8fbc8f;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-  
+    cursor: pointer;
 }
 
 .card:hover {
     box-shadow: 4px 4px 8px hsla(0, 0%, 0%, 0.4);
-    transform: translateY(-3px);
-   }
+    transform: translateY(-5px);
+}
 
 .service_title {
     font-family: "Cormorant", serif;
@@ -215,7 +219,7 @@ h3 {
 
 .service_text {
     font-family: "Inter", sans-serif;
-      font-weight: 600;
+    font-weight: 600;
     font-size: 16px;
     color: #4a4a4a;
     margin-bottom: 5px;
@@ -233,7 +237,7 @@ h3 {
     max-width: 1100px;
     margin: 0 auto;
     padding: 20px;
-   }
+}
 
 .masonry-grid {
     display: grid;
@@ -243,7 +247,7 @@ h3 {
 }
 
 .item {
-    background-color: #8fbc8fcc;
+    background-color: #8fbc8f;
     padding: 1rem;
     border-radius: 15px;
     box-sizing: border-box;
@@ -307,10 +311,10 @@ input[type="email"]:focus {
 
 input[type="email"]::placeholder {
     color: #b1c593;
-   }
+}
 
 .textarea_box {
-       width: 100%;
+    width: 100%;
     height: 180px;
     background-color: #F8F9ED;
     border-radius: 10px;
@@ -330,7 +334,7 @@ input[type="email"]::placeholder {
 
 .textarea_box::placeholder {
     color: #b1c593;
-   }
+}
 
 /* section_reviews */
 
@@ -349,16 +353,16 @@ input[type="email"]::placeholder {
     gap: 20px;
     overflow-x: auto;
     scroll-behavior: smooth;
-       -webkit-overflow-scrolling: touch;
+    -webkit-overflow-scrolling: touch;
     scroll-snap-type: x mandatory;
 }
 
 
 .card_reviews {
     flex: 0 0 auto;
-        box-sizing: border-box;
+    box-sizing: border-box;
     width: clamp(280px, 90%, 340px);
-        max-height: 220px;
+    max-height: 220px;
     padding: 15px;
     border-radius: 15px;
     background-color: #F8F9ED;
@@ -369,17 +373,23 @@ input[type="email"]::placeholder {
     align-items: flex-start;
 }
 
-.header_review p {
+.header_review p,
+.text_warnning_head {
     font-weight: bold;
 }
 
-.text_reviews {
+.text_reviews,
+.text_warnning {
     width: 100%;
-      font-family: "Inter", sans-serif;
+    font-family: "Inter", sans-serif;
     font-weight: 300;
     font-size: clamp(10px, 2vw, 10px);
-        margin:0 !important;
+    margin: 0 !important;
+}
 
+.text_warnning {
+    border-left: 4px solid #8FBC8F;
+    padding: 15px;
 }
 
 .scroll,
@@ -406,7 +416,7 @@ input[type="email"]::placeholder {
 .scroll-dots-services .dot,
 .scroll-dots .dot {
     width: 10px;
-      height: 10px;
+    height: 10px;
     border-radius: 50%;
     background-color: gray;
     border: none;
@@ -424,22 +434,53 @@ input[type="email"]::placeholder {
 }
 
 .scroll-dots-services.dot:focus {
-        outline-offset: 2px;
+    outline-offset: 2px;
 }
 
 .scroll-dots .dot:focus {
-      outline-offset: 2px;
+    outline-offset: 2px;
 }
+/* MODAL /POP UP */
+.modal_body_color {
+    background-color: rgba(0, 0, 0, 0.500);
+}
+
+.modal_card_color {
+    background-color: #E0E9D3;
+}
+
+.box-text {
+    background-color: #8fbc8f;
+}
+
+.btn-close {
+    filter: none;
+    opacity: 1;
+    background: transparent url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%238fbc8f'%3e%3cpath d='M.293.293a1 1 0 0 1 1.414 0L8 6.586 14.293.293a1 1 0 1 1 1.414 1.414L9.414 8l6.293 6.293a1 1 0 0 1-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 0 1-1.414-1.414L6.586 8 .293 1.707a1 1 0 0 1 0-1.414z'/%3e%3c/svg%3e") center/1em auto no-repeat;
+    border: none;
+    outline: none;
+    box-shadow: none;
+}
+
+.btn-close:hover {
+    opacity: 0.8;
+    background-color: transparent;
+}
+
+.btn-close:focus {
+    box-shadow: none;
+    outline: none;
+}
+
 
 /*-------ABOUT------*/
 
-.photos_about{
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
-  width: 100%;
-  height: auto;
+.photos_about {
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    width: 100%;
+    height: auto;
 }
-
 
 
 
@@ -450,7 +491,8 @@ input[type="email"]::placeholder {
 
     .card,
     .card_reviews {
-        width: 100%; /* 🟢 1 card visible */
+        width: 100%;
+        /* 🟢 1 card visible */
     }
 
     /* 🟢 Ajuste margen navbar para móviles */
@@ -469,7 +511,8 @@ input[type="email"]::placeholder {
 
     .card,
     .card_reviews {
-        width: calc((100% - 20px) / 2); /* 🟢 2 cards visibles con gap de 20px */
+        width: calc((100% - 20px) / 2);
+        /* 🟢 2 cards visibles con gap de 20px */
     }
 
     /* 🟢 Ajuste margen navbar para móviles grandes */
@@ -488,8 +531,10 @@ input[type="email"]::placeholder {
 
     .card,
     .card_reviews {
-        width: calc((100% - 20px) / 2); /* 🟢 2 cards visibles con gap de 20px */
-        overflow-x: auto; /* 🟢 mantener scroll horizontal en tablet */
+        width: calc((100% - 20px) / 2);
+        /* 🟢 2 cards visibles con gap de 20px */
+        overflow-x: auto;
+        /* 🟢 mantener scroll horizontal en tablet */
     }
 }
 
@@ -497,15 +542,19 @@ input[type="email"]::placeholder {
 @media (min-width: 992px) {
 
     .card {
-        flex: 0 0 300px; /* 🟢 ancho fijo desktop */
-        width: 300px;    /* 🟢 ancho fijo desktop */
+        flex: 0 0 300px;
+        /* 🟢 ancho fijo desktop */
+        width: 300px;
+        /* 🟢 ancho fijo desktop */
     }
 
     .card_reviews {
-        width: 300px;    /* 🟢 ancho fijo reviews desktop */
+        width: 300px;
+        /* 🟢 ancho fijo reviews desktop */
     }
 
     .scroll {
-        overflow-x: visible; /*  evitar scroll forzado que rompía diseño */
+        overflow-x: visible;
+        /*  evitar scroll forzado que rompía diseño */
     }
 }
