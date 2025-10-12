@@ -71,7 +71,7 @@ a {
     overflow-y: visible;
 }
 
-.IMG {
+.img {
     object-fit: cover;
 }
 
@@ -95,17 +95,17 @@ h4 {
 
 h2 {
     font-size: 39px;
-    margin: 20px 0 40px 0;
+    margin: 20px 0 20px 0;
 }
 
 h3 {
     font-size: 31px;
-    margin: 20px 0 40px 0;
+    margin: 20px 0 20px 0;
 }
 
 h4 {
     font-size: 25px;
-    margin: 20px 0 40px 0;
+    margin: 20px 0 20px 0;
 }
 
 .text {
@@ -219,18 +219,11 @@ h4 {
 
 .service_text {
     font-family: "Inter", sans-serif;
-    font-weight: 600;
-    font-size: 16px;
+    font-weight: 600; 
     color: #4a4a4a;
     margin-bottom: 5px;
-
-
-
-
     font-size: clamp(12px, 3vw, 16px);
-    /* MODIFICADO: responsivo */
-
-}
+ }
 
 /* servicios version masonery */
 .container_masonry {
@@ -250,12 +243,14 @@ h4 {
     background-color: #8fbc8f;
     padding: 1rem;
     border-radius: 15px;
+    cursor: pointer; 
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
+    transition: all 0.4s ease;
 }
 
 .tall {
@@ -384,7 +379,7 @@ input[type="email"]::placeholder {
     font-family: "Inter", sans-serif;
     font-weight: 300;
     font-size: clamp(10px, 2vw, 10px);
-    margin: 0 !important;
+    margin: 0;
 }
 
 .text_warnning {
@@ -478,8 +473,12 @@ input[type="email"]::placeholder {
 .photos_about {
     aspect-ratio: 4 / 3;
     object-fit: cover;
-    width: 100%;
+    width: 150px;
     height: auto;
+}
+
+.credentials {
+  width: 200px;
 }
 
 
