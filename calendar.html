@@ -57,49 +57,7 @@
   <!-- 4. Tu CSS personalizado -->
   <link rel="stylesheet" href="css/style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
-  <style>
-    body {
-      font-family: 'Manrope', sans-serif;
-      background-color: #FFFEF4;
-      color: #4A4A4A;
-    }
-
-    .bg-primary-custom {
-      background-color: #8FBC8F !important;
-    }
-
-    .text-primary-custom {
-      color: #8FBC8F !important;
-    }
-
-    .border-custom {
-      border-color: #D1E6D1 !important;
-    }
-
-    .calendar-btn {
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      border: none;
-      background: none;
-      color: #4A4A4A;
-      transition: all 0.2s;
-    }
-
-    .calendar-btn:hover {
-      background-color: #8FBC8F33;
-    }
-
-    .calendar-btn.active {
-      background-color: #8FBC8F;
-      color: #fff;
-    }
-
-    .form-select-custom {
-      border-color: #D1E6D1;
-    }
-  </style>
-
+ 
 </head>
 
 <body>
@@ -165,90 +123,99 @@
     </header>
   </div>
 
-<div class="container py-5">
+<div class="container py-3">
     <div class="text-center mb-4">
       <h2 class="fw-bold">Calendario de Reservas</h2>
-      <p class="text-primary-custom">Seleccione la fecha y hora para su masaje</p>
+      <p class="text-primary-custom text">Seleccione la fecha y hora para su masaje</p>
     </div>
-
-    <div class="row mb-4">
-      <!-- Mes 1 -->
-      <div class="col-md-6 mb-3">
-        <div class="border border-custom rounded p-3">
-          <div class="d-flex justify-content-between align-items-center mb-2">
-            <button class="btn btn-sm border-0 text-primary-custom" id="prevMonth1">&lt;</button>
-            <h5 class="mb-0" id="monthLabel1">Mes Año</h5>
-            <button class="btn btn-sm border-0 text-primary-custom" id="nextMonth1">&gt;</button>
+ 
+    <div class="container border border-custom rounded-4 py-5 my-4 text">
+      <div class="row mb-4">
+        <!-- Mes 1 -->
+        <div class="col-md-6 mb-3">
+          <div class=" p-3">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+              <button class="btn btn-lg border-0 text-primary-custom" id="prevMonth1">&lt;</button>
+              <h5 class="mb-0 " id="monthLabel1">Mes Año</h5>
+              <div></div>
+            <!-- <button class="btn btn-sm border-0 text-primary-custom" id="nextMonth1" >&gt;</button>  -->
+            </div>
+            <div class="row text-center fw-bold text-primary-custom g-1">
+              <div class="col">D</div>
+              <div class="col">L</div>
+              <div class="col">M</div>
+              <div class="col">X</div>
+              <div class="col">J</div>
+              <div class="col">V</div>
+              <div class="col">S</div>
+            </div>
+            <div class="row text-center g-1 mt-1" id="daysContainer1">
+              <!-- JS rellenará los días aquí -->
+            </div>
           </div>
-          <div class="row text-center fw-bold text-primary-custom g-1">
-            <div class="col">D</div>
-            <div class="col">L</div>
-            <div class="col">M</div>
-            <div class="col">X</div>
-            <div class="col">J</div>
-            <div class="col">V</div>
-            <div class="col">S</div>
-          </div>
-          <div class="row text-center g-1 mt-1" id="daysContainer1">
-            <!-- JS rellenará los días aquí -->
+        </div>
+      
+        <!-- Mes 2 -->
+        <div class="col-md-6 mb-3">
+          <div class="p-3">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+              <div></div>
+          <!--    <button class="btn btn-sm border-0 text-primary-custom" id="prevMonth2" >&lt;</button>  -->
+              <h5 class="mb-0" id="monthLabel2">Mes Año</h5>
+              <button class="btn btn-lg border-0 text-primary-custom" id="nextMonth2">&gt;</button>
+            </div>
+            <div class="row text-center fw-bold text-primary-custom g-1">
+              <div class="col">D</div>
+              <div class="col">L</div>
+              <div class="col">M</div>
+              <div class="col">X</div>
+              <div class="col">J</div>
+              <div class="col">V</div>
+              <div class="col">S</div>
+            </div>
+            <div class="row text-center g-1 mt-1" id="daysContainer2">
+              <!-- JS rellenará los días aquí -->
+            </div>
           </div>
         </div>
       </div>
-
-      <!-- Mes 2 -->
-      <div class="col-md-6 mb-3">
-        <div class="border border-custom rounded p-3">
-          <div class="d-flex justify-content-between align-items-center mb-2">
-            <button class="btn btn-sm border-0 text-primary-custom" id="prevMonth2">&lt;</button>
-            <h5 class="mb-0" id="monthLabel2">Mes Año</h5>
-            <button class="btn btn-sm border-0 text-primary-custom" id="nextMonth2">&gt;</button>
-          </div>
-          <div class="row text-center fw-bold text-primary-custom g-1">
-            <div class="col">D</div>
-            <div class="col">L</div>
-            <div class="col">M</div>
-            <div class="col">X</div>
-            <div class="col">J</div>
-            <div class="col">V</div>
-            <div class="col">S</div>
-          </div>
-          <div class="row text-center g-1 mt-1" id="daysContainer2">
-            <!-- JS rellenará los días aquí -->
-          </div>
+      
+      <div class="row g-3 m-5 text"> 
+        <div class="col-md-4 ">
+          <select class="form-select form-select-custom p-2 rounded-3">
+            <option>Seleccionar servicio</option>
+            <option>Masaje Relajante</option>
+            <option>Masaje de Tejido Profundo</option>
+            <option>Masaje con Piedras Calientes</option>
+             <option>Masaje de Tejido Profundo</option>
+            <option>Masaje con Piedras Calientes</option>
+          </select>
+        </div>
+        <div class="col-md-4">
+          <select class="form-select form-select-custom p-2 rounded-3">
+            <option>Seleccionar terapeuta</option>
+            <option>Roger</option>
+            <option>Brayam</option>
+          
+          </select>
+        </div>
+        <div class="col-md-4">
+          <select class="form-select form-select-custom p-2 rounded-3">
+            <option>Seleccionar hora</option>
+            <option>09:00 AM</option>
+            <option>11:00 AM</option>
+            <option>02:00 PM</option>
+            <option>04:00 PM</option>
+          </select>
         </div>
       </div>
-    </div>
-
-    <div class="row g-3 mb-4">
-      <div class="col-md-4">
-        <select class="form-select form-select-custom">
-          <option>Seleccionar servicio</option>
-          <option>Masaje Relajante</option>
-          <option>Masaje de Tejido Profundo</option>
-          <option>Masaje con Piedras Calientes</option>
-        </select>
-      </div>
-      <div class="col-md-4">
-        <select class="form-select form-select-custom">
-          <option>Seleccionar terapeuta</option>
-          <option>Elena</option>
-          <option>Marco</option>
-          <option>Sofia</option>
-        </select>
-      </div>
-      <div class="col-md-4">
-        <select class="form-select form-select-custom">
-          <option>Seleccionar hora</option>
-          <option>09:00 AM</option>
-          <option>11:00 AM</option>
-          <option>02:00 PM</option>
-          <option>04:00 PM</option>
-        </select>
-      </div>
-    </div>
-
-    <div class="d-flex justify-content-end">
-      <button class="btn bg-primary-custom text-white px-4">Confirmar Reserva</button>
+      
+ <div class="d-flex justify-content-end m-5">
+        <button class="button button_pay text-white px-4">
+           <a href="payment.html" aria-label="Comprar ahora">Confirmar Reserva
+                            
+                        </a></button>
+      </div> 
     </div>
   </div>
 

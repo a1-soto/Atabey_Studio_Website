@@ -13,6 +13,7 @@ body {
 
 a {
     text-decoration: none;
+    color: inherit;
 }
 
 /* HEADER */
@@ -219,11 +220,11 @@ h4 {
 
 .service_text {
     font-family: "Inter", sans-serif;
-    font-weight: 600; 
+    font-weight: 600;
     color: #4a4a4a;
     margin-bottom: 5px;
     font-size: clamp(12px, 3vw, 16px);
- }
+}
 
 /* servicios version masonery */
 .container_masonry {
@@ -243,7 +244,7 @@ h4 {
     background-color: #8fbc8f;
     padding: 1rem;
     border-radius: 15px;
-    cursor: pointer; 
+    cursor: pointer;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
@@ -298,7 +299,7 @@ input[type="email"] {
     box-shadow: none;
 }
 
-input[type="email"]:focus {
+[type="email"]:focus {
     outline: 2px solid #8fbc8f;
     outline-offset: 2px;
     box-shadow: none;
@@ -435,6 +436,7 @@ input[type="email"]::placeholder {
 .scroll-dots .dot:focus {
     outline-offset: 2px;
 }
+
 /* MODAL /POP UP */
 .modal_body_color {
     background-color: rgba(0, 0, 0, 0.500);
@@ -478,10 +480,118 @@ input[type="email"]::placeholder {
 }
 
 .credentials {
-  width: 200px;
+    width: 200px;
+}
+
+/* CALENDAR */
+.bg-primary-custom {
+    /* BOTON */
+    background-color: #8fbc8f !important;
+}
+
+.text-primary-custom {
+    color: #8fbc8f !important;
+}
+
+.border-custom,
+.border-custom_ext {
+    border: 2px solid;
+    border-radius: 15px;
+    border-color: #8fbc8f !important;
+}
+
+.calendar-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    background: none;
+    color: #4a4a4a;
+    transition: all 0.2s;
+}
+
+.calendar-btn:hover {
+    background-color: rgb(51, 51, 51, 50%)
+}
+
+.calendar-btn.active {
+    background-color: #8fbc8f;
+    color: #fffef4;
+}
+
+.form-select-custom {
+    border-color: #8fbc8f;
+    color: #4a4a4a;
+} 
+ .form-select-custom:focus {
+    background-color: #F8F9ED;
+    border-color: #8fbc8f;
+    border: 2.5px solid #8fbc8f;
+     box-shadow: none;
+      
+    } 
+  .form-select-custom option {
+  background-color: #FFFEF4;
+  color: #4a4a4a;
 }
 
 
+.form-select-custom option:checked {
+  background-color: #8fbc8f !important;
+  color: #F8F9ED !important;
+} 
+
+.form-select-custom option:hover{
+    background-color: #8fbc8f !important;
+}
+
+/* CONFIRMACION DE RESERVA */
+.border-custom_ext {
+    border: 2px solid;
+    border-radius: 15px;
+    border-color: #8fbc8f !important;
+}
+
+.border-custom_int {
+    border-color: #8fbc8f !important;
+}
+
+.text-foreground.text-foreground-secondary {
+    color: #4a4a4a;
+}
+
+.reserv-resume input {
+    background-color: #F8F9ED;
+    border: none;
+    font-family: "Inter", sans-serif;
+    font-size: 14px;
+    color: #b1c593;
+    box-shadow: none;
+    outline: 1px solid #8fbc8f;
+ }
+
+.reserv-resume input:focus {
+    outline: 2px solid #8fbc8f;
+    outline-offset: 2px;
+    box-shadow: none;
+}
+
+.reserv-resume input::placeholder {
+    color: #b1c593;
+}
+
+.no-border {
+    border: none !important;
+    /* elimina el borde */
+    background-color: transparent;
+    /* hace el fondo transparente */
+    box-shadow: none !important;
+    /* elimina sombra si aplica */
+}
+
+.button_pay {
+    width: 200px;
+}
 
 /*    BREAKPOINTS UNIFICADOS*/
 
