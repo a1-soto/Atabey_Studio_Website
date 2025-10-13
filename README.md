@@ -1,2 +1,2 @@
-This is a personal project so is really in total caos at this time, go for the latest brash it should be better.
-This is the website of a friend
+This is a personal project, so it's a total chaos right now. Go to the latter brach, it should be better.
+This is a friend's website.
